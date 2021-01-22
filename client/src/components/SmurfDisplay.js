@@ -8,7 +8,7 @@ const SmurfDisplay = (props) =>{
    console.log(props.smurfs);
         return(
 
-        <div>
+        <div><div></div>
             <div>
                 {props.smurfs.map((item) => (
                     <div key={item.id}>
