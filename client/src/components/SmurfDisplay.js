@@ -25,7 +25,7 @@ const SmurfDisplay = (props) =>{
         )
     
 }
-
+  
 const mapStateToProps = state => {
     return{
         smurfs:state.smurfs,
