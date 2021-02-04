@@ -8,35 +8,23 @@ import SmurfDisplay from './components/SmurfDisplay';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 
-function App(props) {
-
-  const [state, dispatch] = useReducer(reducer, initialState);
-
-  useEffect(() => {
-    props.getSmurf();
-    console.log('this is running')
-  }, [])
-  
+class App extends Component {
+  render() {
     return (
       <div className="App">
         <nav className="navbar navbar-dark bg-primary">
           <a className="navbar-brand">Smurf Village Database</a>
         </nav>
         <main>
-          <AddForm dispatch={dispatch}/>
-          <SmurfDisplay formData={state} dispatch={dispatch}/>
+          <AddForm/>
+          <SmurfDisplay/>
         </main>
       </div>
     );
-  
-}
-const mapStateToProps = state => {
-  return{
-      smurfs:state.smurfs,
   }
 }
 
-export default connect(mapStateToProps, {getSmurf})(App);
+export default App;
 
 
 //Task List:
