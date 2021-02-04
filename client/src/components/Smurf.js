@@ -1,18 +1,29 @@
 import React from 'react';
+import { Card } from 'react-bootstrap';
 
-const Smurf = (props) => {
-    
-        
+class Smurf extends React.Component {
 
-        return(
-        <div data-testid="smurf" className="card">
-            
-        </div>
-        );
-    
+    render() {
+        const { smurf } = this.props;
+        console.log(smurf);
+
+        return(<div data-testid="smurf" className="card">
+            <div className="card-body">
+                <Card border="seconary" className="text-center">
+                    <Card.Header as="h1" variant="primary">{smurf.name}</Card.Header>
+                    <Card.Body>
+                    <Card.Title>{smurf.position}</Card.Title>
+                    <Card.Text>"{smurf.nickname}"</Card.Text>
+                    </Card.Body>
+                    <Card.Footer>{smurf.description}</Card.Footer>
+                </Card>
+            </div>
+        </div>);
+    }
 }
 
 export default Smurf;
+
 
 //Task List:
 //1. Access smurf to be displayed through props.
